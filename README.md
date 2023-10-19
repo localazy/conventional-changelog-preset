@@ -15,8 +15,8 @@ emoji commits and squashed PRs.
 npm i -D conventional-changelog \
 conventional-changelog-cli \
 conventional-recommended-bump@9 \
-https://github.com/honzabubenik/conventional-changelog-preset.git \
-https://github.com/honzabubenik/conventional-changelog-writer.git
+https://github.com/localazy/conventional-changelog-preset.git \
+https://github.com/localazy/conventional-changelog-writer.git
 ```
 
 ## 🚀 Usage
