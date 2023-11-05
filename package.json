@@ -4,6 +4,20 @@
   "description": "Conventional Changelog with Emojis support",
   "author": "Localazy <team@localazy.com>",
   "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/localazy/conventional-changelog-preset/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/localazy/conventional-changelog-preset"
+  },
+  "keywords": [
+    "conventional-changelog",
+    "emoji",
+    "localazy",
+    "preset"
+  ],
+  "homepage": "https://github.com/localazy/conventional-changelog-preset#readme",
   "main": "src/plugin.js",
   "files": [
     "src"
