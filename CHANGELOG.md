@@ -1,3 +1,23 @@
+# [1.1.0](https://github.com/localazy/conventional-changelog-preset/compare/1.0.0...1.1.0) (2023-12-07)
+
+### ✨ Features
+
+* Add lint alias ([f94c480](https://github.com/localazy/conventional-changelog-preset/commit/f94c480))
+* Change commit type detection order, update emojis list ([993321b](https://github.com/localazy/conventional-changelog-preset/commit/993321b))
+
+
+### 📚 Documentation
+
+* Update README ([3f05308](https://github.com/localazy/conventional-changelog-preset/commit/3f05308))
+
+
+### 🧰 Other Commits
+
+* Add changelog support ([9e3f492](https://github.com/localazy/conventional-changelog-preset/commit/9e3f492))
+* Add release workflow ([a5fa78b](https://github.com/localazy/conventional-changelog-preset/commit/a5fa78b))
+* Update package.json ([0b0b277](https://github.com/localazy/conventional-changelog-preset/commit/0b0b277))
+* Update README ([0027024](https://github.com/localazy/conventional-changelog-preset/commit/0027024))
+
 # 1.0.0 (2023-11-05)
 
 ### ✨ Features
