@@ -2,13 +2,13 @@ module.exports = {
   showEmojiPerCommit: false,
   emojis: [
     {
-      emoji: '🚨',
+      emoji: '💥',
       emojiAliases: [],
       type: 'breaking',
       typeAliases: [],
       bump: 'major',
       inChangelog: true,
-      heading: '🚨 Breaking Changes',
+      heading: '💥 Breaking Changes',
       index: 10
     },
     {
@@ -33,9 +33,9 @@ module.exports = {
     },
     {
       emoji: '🐛',
-      emojiAliases: ['🐞', '🚑'],
+      emojiAliases: ['🐞', '🚑', '🚨'],
       type: 'fix',
-      typeAliases: ['fixes'],
+      typeAliases: ['fixes', 'hotfix', 'hotfixes'],
       bump: 'patch',
       inChangelog: true,
       heading: '🐛 Bug Fixes',

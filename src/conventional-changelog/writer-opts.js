@@ -121,7 +121,7 @@ function unSquash(squashedCommit, breakingHeading) {
 }
 
 function transformCommit(commit, breakingHeading) {
-  const group = groups.findGroupByEmoji(commit.emoji) || groups.findGroupByType(commit.parsedType);
+  const group = groups.findGroupByType(commit.parsedType) || groups.findGroupByEmoji(commit.emoji);
 
   if (group === null || !group.inChangelog) {
     return null;
