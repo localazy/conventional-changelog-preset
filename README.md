@@ -81,7 +81,7 @@ extending existing configuration.
 | 📚    | 📖, 📝     | `docs`     | `doc`                           | patch        | ✅             | 📚 Documentation    | 50    |
 | 🧪    | ✅, 🚦      | `test`     | `tests`                         | patch        | ✅             | 🧪 Tests            | 60    |
 | ♻️    | 🦄         | `refactor` |                                 | patch        | ✅             | 🧰 Other Commits    | 70    |
-| 💄    | 🎨, 🌈     | `style`    | `cleanup`, `format`             | patch        | ✅             | 🧰 Other Commits    | 71    |
+| 💄    | 🎨, 🌈     | `style`    | `cleanup`, `format`, `lint`     | patch        | ✅             | 🧰 Other Commits    | 71    |
 | 🔧    | ⚙️, 🏗, ⬆️ | `chore`    | `chores`, `deps`, `build`, `ci` | patch        | ✅             | 🧰 Other Commits    | 72    |
 | 🚀    |            | `release`  |                                 | patch        |               |                     | 1000  |
 

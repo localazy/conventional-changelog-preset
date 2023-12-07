@@ -75,7 +75,7 @@ module.exports = {
       emoji: '💄',
       emojiAliases: ['🎨', '🌈'],
       type: 'style',
-      typeAliases: ['cleanup', 'format'],
+      typeAliases: ['cleanup', 'format', 'lint'],
       bump: 'patch',
       inChangelog: true,
       heading: '🧰 Other Commits',
