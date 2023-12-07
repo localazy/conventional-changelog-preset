@@ -74,10 +74,10 @@ extending existing configuration.
 
 | Emoji | Aliases    | Type       | Type Aliases                    | Version Bump | In Changelog? | Heading             | Order |
 |-------|------------|------------|---------------------------------|--------------|---------------|---------------------|-------|
-| 🚨    |            | `breaking` |                                 | major        | ✅             | 🚨 Breaking Changes | 10    |
+| 💥    |            | `breaking` |                                 | major        | ✅             | 💥 Breaking Changes | 10    |
 | ✨     | 🌟, 💫, 🌠 | `feat`     | `feature`                       | minor        | ✅             | ✨ Features          | 20    |
 | ⚡️    |            | `perf`     | `performance`                   | patch        | ✅             | ⚡️ Performance      | 30    |
-| 🐛    | 🐞, 🚑     | `fix`      | `fixes`                         | patch        | ✅             | 🐛 Bug Fixes        | 40    |
+| 🐛    | 🐞, 🚑, 🚨 | `fix`      | `fixes`, `hotfix`, `hotfixes`   | patch        | ✅             | 🐛 Bug Fixes        | 40    |
 | 📚    | 📖, 📝     | `docs`     | `doc`                           | patch        | ✅             | 📚 Documentation    | 50    |
 | 🧪    | ✅, 🚦      | `test`     | `tests`                         | patch        | ✅             | 🧪 Tests            | 60    |
 | ♻️    | 🦄         | `refactor` |                                 | patch        | ✅             | 🧰 Other Commits    | 70    |
