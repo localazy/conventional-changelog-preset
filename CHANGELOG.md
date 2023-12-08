@@ -1,3 +1,15 @@
+# [1.2.0](https://github.com/localazy/conventional-changelog-preset/compare/1.1.0...1.2.0) (2023-12-08)
+
+### ✨ Features
+
+* Add support for generating PR list ([4a9ba7a](https://github.com/localazy/conventional-changelog-preset/commit/4a9ba7a))
+
+
+### 🧰 Other Commits
+
+* Update CI ([d46b6dd](https://github.com/localazy/conventional-changelog-preset/commit/d46b6dd))
+* Update CI ([6b905fc](https://github.com/localazy/conventional-changelog-preset/commit/6b905fc))
+
 # [1.1.0](https://github.com/localazy/conventional-changelog-preset/compare/1.0.0...1.1.0) (2023-12-07)
 
 ### ✨ Features
