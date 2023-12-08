@@ -22,8 +22,4 @@
   {{~@root.commit}}/{{hash}}))
 {{~else}}
   {{~hash}}
-{{~/if}}
-
-{{#if pr}}
-([#{{pr.id}}]({{pr.url}}))
-{{/if}}
+{{~/if}}{{#if pr}} ([#{{pr.id}}]({{pr.url}})){{/if}}

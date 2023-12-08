@@ -84,7 +84,11 @@ function validateParsedType(commit) {
 }
 
 function detectSquashedMerge(commit) {
-  return /^.+ \(#\d+\)$/gm.test(commit.header);
+  return hasSquashedHash(commit.header);
+}
+
+function hasSquashedHash(str) {
+  return /^.+ \(#\d+\)$/gm.test(str);
 }
 
 function extractPullRequestId(commit) {
@@ -100,6 +104,10 @@ function extractPullRequestId(commit) {
 
 function extractPullRequestName(commit) {
   const str = commit.subject || commit.header;
+  return removeSquashedHash(str);
+}
+
+function removeSquashedHash(str) {
   const regex = /^(.+) \(#\d+\)$/gm
   const result = regex.exec(str)
 
@@ -136,7 +144,10 @@ function unSquash(squashedCommit, breakingHeading, context) {
     const emoji = match[1];
     const parsedType = match[2];
     const scope = match[3] || null;
-    const subject = match[4];
+    let subject = match[4];
+    if (hasSquashedHash(subject)) {
+      subject = removeSquashedHash(subject)
+    }
     const header = scope ? `${emoji} ${parsedType}(${scope}): ${subject}` : `${emoji} ${parsedType}: ${subject}`;
     const commit = transformCommit(
       {
