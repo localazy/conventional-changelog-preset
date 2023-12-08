@@ -13,7 +13,7 @@ jobs:
   prepare:
     name: Prepare Release
     if: github.event.head.ref != 'release' && !startsWith(github.event.commits[0].message, '🚀 release:')
-    runs-on: [ self-hosted, Linux ]
+    runs-on: [ ubuntu-latest ]
     steps:
       - name: Prepare release branch and PR
         uses: 'localazy/release@v1'
