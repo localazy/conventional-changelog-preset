@@ -1,4 +1,13 @@
 {{> header}}
+
+{{#if prList}}
+### 🔀 Pull Requests
+
+{{#each prList}}
+* {{name}} ([#{{id}}]({{url}}))
+{{/each}}
+{{/if}}
+
 {{#each commitGroups}}
 
 {{#if title}}

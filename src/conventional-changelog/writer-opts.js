@@ -2,6 +2,7 @@ const { readFile } = require('fs').promises;
 const { resolve } = require('path');
 const groups = require('./groups');
 const config = require('../config/config');
+const { orderBy } = require('lodash');
 
 async function createWriterOpts() {
   const [template, header, commit, footer] = await Promise.all([
@@ -16,8 +17,19 @@ async function createWriterOpts() {
   writerOpts.headerPartial = header;
   writerOpts.commitPartial = commit;
   writerOpts.footerPartial = footer;
+  writerOpts.finalizeContext = finalizeContext;
 
   return writerOpts;
+}
+
+function finalizeContext(context, options, filteredCommits, keyCommit, commits) {
+  if (context.commitGroups) {
+    context.commitGroups.forEach((group) => {
+      group.commits = orderBy(group.commits, ['pr.id', 'scope', 'subject'], ['desc', 'asc', 'asc']);
+    });
+    context.prList = orderBy(context.prList, ['id'], ['desc']);
+  }
+  return context;
 }
 
 function commitGroupsSort(commitGroup, otherCommitGroup) {
@@ -43,18 +55,19 @@ function getWriterOpts() {
       const hasValidType = validateParsedType(commit);
       const isSquashedMerge = detectSquashedMerge(commit);
 
-      if (hasValidType && !isSquashedMerge) {
-        return transformCommit(commit, breakingHeading);
-      }
-
-      if (!hasValidType && isSquashedMerge) {
-        const commits = unSquash(commit, breakingHeading);
+      if (isSquashedMerge) {
+        // Single commit squash merge
+        // LOC branch squash merge
+        const commits = unSquash(commit, breakingHeading, context);
 
         if (commits.length === 0) {
           return null;
         }
 
         return commits;
+      } else if (hasValidType) {
+        // Merge pull requests
+        return transformCommit(commit, breakingHeading, context);
       }
 
       return null;
@@ -71,12 +84,46 @@ function validateParsedType(commit) {
 }
 
 function detectSquashedMerge(commit) {
-  return /(\p{Extended_Pictographic})/u.test(commit.body);
+  return /^.+ \(#\d+\)$/gm.test(commit.header);
 }
 
-function unSquash(squashedCommit, breakingHeading) {
-  const chunks = squashedCommit.body.split('\n');
-  const regex = /(<a?:.+?:\d{18}>|\p{Extended_Pictographic})\s*(\w+)\(*(\w*)\)*:\s*(.*)/u;
+function extractPullRequestId(commit) {
+  const regex = /^.+ \(#(\d+)\)$/gm
+  const result = regex.exec(commit.header)
+
+  if (result && result.length > 1) {
+    return result[1];
+  }
+
+  return null;
+}
+
+function extractPullRequestName(commit) {
+  const str = commit.subject || commit.header;
+  const regex = /^(.+) \(#\d+\)$/gm
+  const result = regex.exec(str)
+
+  if (result && result.length > 1) {
+    return result[1];
+  }
+
+  return null;
+}
+
+function generatePullRequestUrl(id, context) {
+  if (id) {
+    return `${context.host}/${context.owner}/${context.repository}/pull/${id}`
+  }
+
+  return null;
+}
+
+function unSquash(squashedCommit, breakingHeading, context) {
+  const prID = extractPullRequestId(squashedCommit);
+  const prName = extractPullRequestName(squashedCommit);
+  const str = squashedCommit.body || squashedCommit.header
+  const chunks = str.split('\n');
+  const regex = /(<a?:.+?:\d{18}>|\p{Extended_Pictographic})?\s*(\w+)\(*(\w*)\)*:\s*(.*)/u;
   const commits = [];
 
   chunks.forEach((chunk) => {
@@ -105,11 +152,17 @@ function unSquash(squashedCommit, breakingHeading) {
         references: [],
         mentions: [],
         revert: null,
+        pr: {
+          id: prID,
+          name: prName,
+          url: generatePullRequestUrl(prID, context),
+        },
         hash: squashedCommit.hash,
         gitTags: squashedCommit.gitTags,
         committerDate: squashedCommit.committerDate
       },
-      breakingHeading
+      breakingHeading,
+      context
     );
 
     if (commit) {
@@ -120,11 +173,23 @@ function unSquash(squashedCommit, breakingHeading) {
   return commits;
 }
 
-function transformCommit(commit, breakingHeading) {
+function transformCommit(commit, breakingHeading, context) {
   const group = groups.findGroupByType(commit.parsedType) || groups.findGroupByEmoji(commit.emoji);
 
   if (group === null || !group.inChangelog) {
     return null;
+  }
+
+  if (commit.pr?.id) {
+    if (!context.prList) {
+      context.prList = [];
+    }
+
+    const index = context.prList.findIndex(i => i.id === commit.pr.id)
+
+    if (index === -1) {
+      context.prList.push(commit.pr)
+    }
   }
 
   commit.type = group.heading;
