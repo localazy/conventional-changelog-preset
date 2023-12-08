@@ -16,7 +16,7 @@ jobs:
     runs-on: [ self-hosted, Linux ]
     steps:
       - name: Prepare release branch and PR
-        uses: localazy/release@v1
+        uses: 'localazy/release@v1'
         with:
           action: prepare
           app-id: ${{ secrets.AUTH_APP_ID }}
@@ -28,7 +28,7 @@ jobs:
     runs-on: [ self-hosted, Linux ]
     steps:
       - name: Release new version
-        uses: localazy/release@v1
+        uses: 'localazy/release@v1'
         with:
           action: release
           app-id: ${{ secrets.AUTH_APP_ID }}
