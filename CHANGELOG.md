@@ -1,3 +1,9 @@
+## [1.2.1](https://github.com/localazy/conventional-changelog-preset/compare/1.2.0...1.2.1) (2023-12-08)
+
+### 🐛 Bug Fixes
+
+* Fix template spacing ([7ed119e](https://github.com/localazy/conventional-changelog-preset/commit/7ed119e))
+
 # [1.2.0](https://github.com/localazy/conventional-changelog-preset/compare/1.1.0...1.2.0) (2023-12-08)
 
 ### ✨ Features
