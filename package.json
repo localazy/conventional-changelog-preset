@@ -20,7 +20,8 @@
   "homepage": "https://github.com/localazy/conventional-changelog-preset#readme",
   "main": "src/plugin.js",
   "files": [
-    "src"
+    "src",
+    "config"
   ],
   "scripts": {
     "changelog:preview": "conventional-changelog -p @localazy/preset -u",
