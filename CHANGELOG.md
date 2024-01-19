@@ -1,3 +1,27 @@
+## 1.2.2 (2024-01-19)
+
+### 🔀 Pull Requests
+
+* [CI changes #4](https://github.com/localazy/conventional-changelog-preset/pull/4)
+
+
+### ✨ Features
+
+* Add short PR context config file ([71ed6eb](https://github.com/localazy/conventional-changelog-preset/commit/71ed6eb)) ([#4](https://github.com/localazy/conventional-changelog-preset/pull/4))
+* Add support for different PR list rendering ([71ed6eb](https://github.com/localazy/conventional-changelog-preset/commit/71ed6eb)) ([#4](https://github.com/localazy/conventional-changelog-preset/pull/4))
+
+
+### 🐛 Bug Fixes
+
+* Fix template spacing ([7ed119e](https://github.com/localazy/conventional-changelog-preset/commit/7ed119e))
+
+
+### 🧰 Other Commits
+
+* Update npm config ([d422bcf](https://github.com/localazy/conventional-changelog-preset/commit/d422bcf))
+* Remove unnecessary changelog deps ([71ed6eb](https://github.com/localazy/conventional-changelog-preset/commit/71ed6eb)) ([#4](https://github.com/localazy/conventional-changelog-preset/pull/4))
+* Update CI ([71ed6eb](https://github.com/localazy/conventional-changelog-preset/commit/71ed6eb)) ([#4](https://github.com/localazy/conventional-changelog-preset/pull/4))
+
 ## 1.2.1 (2024-01-19)
 
 ### 🔀 Pull Requests
