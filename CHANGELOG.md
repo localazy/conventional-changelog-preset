@@ -1,3 +1,11 @@
+## 1.2.4 (2024-01-22)
+
+
+
+### 🐛 Bug Fixes
+
+* Fix generated PR list whitespace ([1972bdc](https://github.com/localazy/conventional-changelog-preset/commit/1972bdc))
+
 ## 1.2.3 (2024-01-19)
 
 ### 🔀 Pull Requests
