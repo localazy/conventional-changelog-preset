@@ -1,3 +1,16 @@
+## 1.2.6 (2024-01-22)
+
+
+
+### 📚 Documentation
+
+* Update README.md ([cb04fb1](https://github.com/localazy/conventional-changelog-preset/commit/cb04fb1))
+
+
+### 🧰 Other Commits
+
+* Update CI ([0a75ae4](https://github.com/localazy/conventional-changelog-preset/commit/0a75ae4))
+
 ## 1.2.5 (2024-01-22)
 
 
