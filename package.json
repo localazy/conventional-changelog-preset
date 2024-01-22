@@ -1,6 +1,6 @@
 {
   "name": "@localazy/conventional-changelog-preset",
-  "version": "1.2.4",
+  "version": "1.2.5",
   "description": "Conventional Changelog with Emojis support",
   "author": "Localazy <team@localazy.com>",
   "license": "MIT",
@@ -29,7 +29,7 @@
     "lodash": "^4.17.21"
   },
   "devDependencies": {
-    "@localazy/conventional-changelog-preset": "github:localazy/conventional-changelog-preset#ci-changes",
+    "@localazy/conventional-changelog-preset": "github:localazy/conventional-changelog-preset",
     "conventional-changelog": "^5.1.0",
     "conventional-changelog-cli": "^4.1.0",
     "conventional-changelog-writer": "github:localazy/conventional-changelog-writer",
