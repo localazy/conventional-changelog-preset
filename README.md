@@ -87,11 +87,6 @@ extending existing configuration.
 
 <!-- emoji-table -->
 
-## 📋 TODO
-
-- [ ] Fix bad order for breaking changes
-- [ ] Detect breaking changes from squashed PR (is it even possible?)
-
 ## 📜 License
 
 Code released under the [MIT license](LICENSE).
