@@ -1,3 +1,11 @@
+## 1.2.7 (2024-03-18)
+
+
+
+### 🐛 Bug Fixes
+
+- Use correct markdown list syntax in templates ([e772411](https://github.com/localazy/conventional-changelog-preset/commit/e772411))
+
 ## 1.2.6 (2024-01-22)
 
 
