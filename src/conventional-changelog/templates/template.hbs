@@ -5,9 +5,9 @@
 
 {{#each prList}}
 {{#if @root.enableShortPR}}
-* #{{id}}
+- #{{id}}
 {{else}}
-* [{{name}} #{{id}}]({{url}})
+- [{{name}} #{{id}}]({{url}})
 {{/if}}
 {{/each}}
 {{/if}}
