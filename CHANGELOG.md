@@ -1,3 +1,11 @@
+## 1.2.8 (2024-04-16)
+
+
+
+### 🧰 Other Commits
+
+- Remove extra white-space from generated changelog ([bc31863](https://github.com/localazy/conventional-changelog-preset/commit/bc31863))
+
 ## 1.2.7 (2024-03-18)
 
 
