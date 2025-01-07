@@ -129,13 +129,12 @@ function generatePullRequestUrl(id, context) {
 function unSquash(squashedCommit, breakingHeading, context) {
   const prID = extractPullRequestId(squashedCommit);
   const prName = extractPullRequestName(squashedCommit);
-  const str = squashedCommit.body || squashedCommit.header
+  const str = squashedCommit.body || squashedCommit.footer || squashedCommit.header
   const chunks = str.split('\n');
-  const regex = /(<a?:.+?:\d{18}>|\p{Extended_Pictographic})?\s*(\w+)\(*(\w*)\)*:\s*(.*)/u;
   const commits = [];
 
   chunks.forEach((chunk) => {
-    const match = chunk.match(regex);
+    const match = chunk.match(/(<a?:.+?:\d{18}>|\p{Extended_Pictographic})?\s*(\w+)\(*(\w*)\)*:\s*(.*)/u);
 
     if (match === null) {
       return;
