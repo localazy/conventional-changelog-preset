@@ -1,3 +1,9 @@
+## 1.2.9 (2025-01-07)
+
+### 🐛 Bug Fixes
+
+- Fix unsquashing for commit with footer ([7b01029](https://github.com/localazy/conventional-changelog-preset/commit/7b01029))
+
 ## 1.2.8 (2024-04-16)
 
 
