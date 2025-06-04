@@ -13,15 +13,17 @@ async function createConventionalRecommendedBumpOpts(parserOpts) {
       let features = 0;
 
       commits.forEach((commit) => {
-        if (commit.notes.length > 0) {
-          // Breaking changes in commit notes
-          breaking += commit.notes.length;
-          level = 0;
-        } else if (commit.emoji && groups.breakingEmojis.some(emoji => emoji === commit.emoji)) {
+        const commitEmojiGroup = groups.findGroupByEmoji(commit.emoji);
+        const commitTypeGroup = groups.findGroupByType(commit.parsedType);
+
+        const isBreaking = (commitEmojiGroup && commitEmojiGroup.type === 'breaking') || (commitTypeGroup && commitTypeGroup.type === 'breaking');
+        const isFeature = (commitEmojiGroup && commitEmojiGroup.type === 'feat') || (commitTypeGroup && commitTypeGroup.type === 'feat');
+
+        if (isBreaking) {
           // Breaking changes in commit message (emoji)
           breaking += 1;
           level = 0;
-        } else if (commit.emoji && groups.featureEmojis.some(emoji => emoji === commit.emoji)) {
+        } else if (isFeature) {
           // Feature commit
           features += 1;
           if (level === 2) {
