@@ -1,3 +1,9 @@
+## 1.2.10 (2025-06-04)
+
+### 🐛 Bug Fixes
+
+- Fix wrong bump version for commits without emoji ([cb27b06](https://github.com/localazy/conventional-changelog-preset/commit/cb27b06))
+
 ## 1.2.9 (2025-01-07)
 
 ### 🐛 Bug Fixes
