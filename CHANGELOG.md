@@ -1,3 +1,9 @@
+## 1.2.11 (2025-07-30)
+
+### 🐛 Bug Fixes
+
+- Fix regex for parsing commits ([18dda61](https://github.com/localazy/conventional-changelog-preset/commit/18dda61))
+
 ## 1.2.10 (2025-06-04)
 
 ### 🐛 Bug Fixes
