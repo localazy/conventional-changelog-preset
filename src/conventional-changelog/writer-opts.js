@@ -134,7 +134,7 @@ function unSquash(squashedCommit, breakingHeading, context) {
   const commits = [];
 
   chunks.forEach((chunk) => {
-    const match = chunk.match(/([\u{1F300}-\u{1FAFF}\u{2600}-\u{27BF}\u{FE0F}])?\s*(\w+)\(*(.*?)\)*:\s*(.*)/u);
+    const match = chunk.match(/(\p{Extended_Pictographic}[\uFE0F\uFE0E]?(?:\u200D\p{Extended_Pictographic}[\uFE0F\uFE0E]?)*|[\p{Regional_Indicator}]{2})?\s*(\w+)\(*(.*?)\)*:\s*(.*)/u);
 
     if (match === null) {
       return;
