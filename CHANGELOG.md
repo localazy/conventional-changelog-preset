@@ -1,3 +1,9 @@
+## 1.2.13 (2025-08-10)
+
+### 🐛 Bug Fixes
+
+- Support wide emojis ([7253693](https://github.com/localazy/conventional-changelog-preset/commit/7253693))
+
 ## 1.2.12 (2025-08-10)
 
 ### 🐛 Bug Fixes
