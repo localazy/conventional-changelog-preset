@@ -1,3 +1,10 @@
+## 1.2.12 (2025-08-10)
+
+### 🐛 Bug Fixes
+
+- Better emoji range in regex ([b2b518e](https://github.com/localazy/conventional-changelog-preset/commit/b2b518e))
+- Match all characters in commit scope ([8779408](https://github.com/localazy/conventional-changelog-preset/commit/8779408))
+
 ## 1.2.11 (2025-07-30)
 
 ### 🐛 Bug Fixes
