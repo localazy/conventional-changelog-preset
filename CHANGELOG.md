@@ -1,3 +1,13 @@
+# 1.3.0 (2025-08-22)
+
+### ✨ Features
+
+- **emoji-table:** Add text aliases for emoji types ([35c1c6a](https://github.com/localazy/conventional-changelog-preset/commit/35c1c6a))
+
+### 🐛 Bug Fixes
+
+- Support wide emojis ([7253693](https://github.com/localazy/conventional-changelog-preset/commit/7253693))
+
 ## 1.2.12 (2025-08-10)
 
 ### 🐛 Bug Fixes
