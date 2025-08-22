@@ -5,7 +5,11 @@ function getAll() {
 }
 
 function findGroupByEmoji(emoji) {
-  const group = groups.find((g) => g.emoji === emoji || g.emojiAliases.indexOf(emoji) !== -1);
+  const group = groups.find((g) =>
+    g.emoji === emoji ||
+    g.emojiAliases.indexOf(emoji) !== -1 ||
+    (g.textAliases && g.textAliases.indexOf(emoji) !== -1)
+  );
 
   return group ? group : null;
 }
@@ -26,6 +30,9 @@ function emojisByBump(bump) {
   const types = groups.filter(e => e.bump === bump);
   return types.reduce((emojis, type) => {
     emojis.push(type.emoji, ...type.emojiAliases);
+    if (type.textAliases) {
+      emojis.push(...type.textAliases);
+    }
     return emojis;
   }, []);
 }

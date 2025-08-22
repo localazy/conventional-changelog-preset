@@ -5,12 +5,13 @@ const path = require('path');
 
 const table = [
   '\n',
-  '| Emoji | Aliases | Type | Type Aliases | Version Bump | In Changelog? | Heading | Order |',
-  '|-------|---------|------|--------------|--------------|---------------|---------|-------|',
+  '| Emoji | Aliases | Text Aliases | Type | Type Aliases | Version Bump | In Changelog? | Heading | Order |',
+  '|-------|---------|--------------|------|--------------|--------------|---------------|---------|-------|',
   ...groups.map(group =>
     `|${[
       group.emoji,
       group.emojiAliases.join(', '),
+      (group.textAliases || []).join(', '),
       `\`${group.type}\``,
       group.typeAliases.map(type => `\`${type}\``).join(', '),
       group.bump,

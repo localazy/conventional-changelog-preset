@@ -134,7 +134,7 @@ function unSquash(squashedCommit, breakingHeading, context) {
   const commits = [];
 
   chunks.forEach((chunk) => {
-    const match = chunk.match(/(\p{Extended_Pictographic}[\uFE0F\uFE0E]?(?:\u200D\p{Extended_Pictographic}[\uFE0F\uFE0E]?)*|[\p{Regional_Indicator}]{2})?\s*(\w+)\(*(.*?)\)*:\s*(.*)/u);
+    const match = chunk.match(/((?:\p{Extended_Pictographic}[\uFE0F\uFE0E]?(?:\u200D\p{Extended_Pictographic}[\uFE0F\uFE0E]?)*|[\p{Regional_Indicator}]{2}|(?::[a-z0-9_+-]+:)+)\s*)?(\w+)\s*\(*(.*?)\)*:\s*(.*)/u);
 
     if (match === null) {
       return;
@@ -207,6 +207,14 @@ function transformCommit(commit, breakingHeading, context) {
   commit.notes.forEach(note => {
     note.title = breakingHeading;
   });
+
+  const emojiByType = config.emojis.find(e => {
+    return e.type === commit.parsedType || e.typeAliases.includes(commit.parsedType) ;
+  })
+
+  if (emojiByType) {
+    commit.emoji = emojiByType.emoji
+  }
 
   if (commit.emoji && config.showEmojiPerCommit) {
     commit.showEmoji = commit.emoji;

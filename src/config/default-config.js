@@ -4,6 +4,7 @@ module.exports = {
     {
       emoji: '💥',
       emojiAliases: [],
+      textAliases: [':boom:', ':collision:'],
       type: 'breaking',
       typeAliases: [],
       bump: 'major',
@@ -14,6 +15,7 @@ module.exports = {
     {
       emoji: '✨',
       emojiAliases: ['🌟', '💫', '🌠'],
+      textAliases: [':sparkles:', ':star:'],
       type: 'feat',
       typeAliases: ['feature'],
       bump: 'minor',
@@ -24,6 +26,7 @@ module.exports = {
     {
       emoji: '⚡️',
       emojiAliases: [],
+      textAliases: [':zap:', ':lightning:'],
       type: 'perf',
       typeAliases: ['performance'],
       bump: 'patch',
@@ -34,6 +37,7 @@ module.exports = {
     {
       emoji: '🐛',
       emojiAliases: ['🐞', '🚑', '🚨'],
+      textAliases: [':bug:', ':beetle:'],
       type: 'fix',
       typeAliases: ['fixes', 'hotfix', 'hotfixes'],
       bump: 'patch',
@@ -44,6 +48,7 @@ module.exports = {
     {
       emoji: '📚',
       emojiAliases: ['📖', '📝'],
+      textAliases: [':books:', ':book:', ':memo:'],
       type: 'docs',
       typeAliases: ['doc'],
       bump: 'patch',
@@ -54,6 +59,7 @@ module.exports = {
     {
       emoji: '🧪',
       emojiAliases: ['✅', '🚦'],
+      textAliases: [':test_tube:', ':alembic:'],
       type: 'test',
       typeAliases: ['tests'],
       bump: 'patch',
@@ -64,6 +70,7 @@ module.exports = {
     {
       emoji: '♻️',
       emojiAliases: ['🦄'],
+      textAliases: [':recycle:', ':unicorn:'],
       type: 'refactor',
       typeAliases: [],
       bump: 'patch',
@@ -74,6 +81,7 @@ module.exports = {
     {
       emoji: '💄',
       emojiAliases: ['🎨', '🌈'],
+      textAliases: [':lipstick:', ':art:', ':rainbow:'],
       type: 'style',
       typeAliases: ['cleanup', 'format', 'lint'],
       bump: 'patch',
@@ -84,6 +92,7 @@ module.exports = {
     {
       emoji: '🔧',
       emojiAliases: ['⚙️', '🏗', '⬆️'],
+      textAliases: [':wrench:', ':gear:', ':hammer_and_wrench:'],
       type: 'chore',
       typeAliases: ['chores', 'deps', 'build', 'ci'],
       bump: 'patch',
@@ -94,6 +103,7 @@ module.exports = {
     {
       emoji: '🚀',
       emojiAliases: [],
+      textAliases: [':rocket:'],
       type: 'release',
       typeAliases: [],
       bump: 'patch',
