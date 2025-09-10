@@ -1,3 +1,9 @@
+## 1.3.2 (2025-09-10)
+
+### 🐛 Bug Fixes
+
+- resolve unsquashing issue for commits with valid types ([1d698bc](https://github.com/localazy/conventional-changelog-preset/commit/1d698bc))
+
 ## 1.3.1 (2025-09-10)
 
 ### 🐛 Bug Fixes
