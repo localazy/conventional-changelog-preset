@@ -1,3 +1,9 @@
+## 1.3.3 (2025-09-10)
+
+### 🐛 Bug Fixes
+
+- properly handle single squashed commits with valid types ([e18075e](https://github.com/localazy/conventional-changelog-preset/commit/e18075e))
+
 ## 1.3.2 (2025-09-10)
 
 ### 🐛 Bug Fixes
