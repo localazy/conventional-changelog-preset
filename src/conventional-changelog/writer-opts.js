@@ -182,16 +182,17 @@ function unSquash(squashedCommit, breakingHeading, context, hasValidType) {
 
   if (commits.length === 0 && hasValidType) {
     let subject = squashedCommit.subject;
-
     if (hasSquashedHash(subject)) {
       subject = removeSquashedHash(subject)
     }
+
     let header = squashedCommit.header;
     if (hasSquashedHash(header)) {
       header = removeSquashedHash(header)
     }
-    commits.push(
-      transformCommit({
+
+    const singleCommit = transformCommit(
+      {
         ...squashedCommit,
         subject,
         header,
@@ -199,9 +200,15 @@ function unSquash(squashedCommit, breakingHeading, context, hasValidType) {
           id: prID,
           name: prName,
           url: generatePullRequestUrl(prID, context),
-        }
-      }, breakingHeading, context),
+        },
+      },
+      breakingHeading,
+      context,
     );
+
+    if (singleCommit !== null) {
+      commits.push(singleCommit);
+    }
   }
 
   return commits;
