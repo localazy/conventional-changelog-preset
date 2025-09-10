@@ -1,3 +1,9 @@
+## 1.3.1 (2025-09-10)
+
+### 🐛 Bug Fixes
+
+- handle empty commit list ([33cb075](https://github.com/localazy/conventional-changelog-preset/commit/33cb075))
+
 # 1.3.0 (2025-08-22)
 
 ### ✨ Features
