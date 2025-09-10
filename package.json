@@ -1,6 +1,6 @@
 {
   "name": "@localazy/conventional-changelog-preset",
-  "version": "1.3.2",
+  "version": "1.3.3",
   "description": "Conventional Changelog with Emojis support",
   "author": "Localazy <team@localazy.com>",
   "license": "MIT",
