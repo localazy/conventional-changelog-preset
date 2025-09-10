@@ -61,6 +61,9 @@ function getWriterOpts() {
         const commits = unSquash(commit, breakingHeading, context);
 
         if (commits.length === 0) {
+          if (hasValidType) {
+            return transformCommit(commit, breakingHeading, context);
+          }
           return null;
         }
 
