@@ -58,12 +58,9 @@ function getWriterOpts() {
       if (isSquashedMerge) {
         // Single commit squash merge
         // LOC branch squash merge
-        const commits = unSquash(commit, breakingHeading, context);
+        const commits = unSquash(commit, breakingHeading, context, hasValidType);
 
         if (commits.length === 0) {
-          if (hasValidType) {
-            return transformCommit(commit, breakingHeading, context);
-          }
           return null;
         }
 
@@ -129,7 +126,7 @@ function generatePullRequestUrl(id, context) {
   return null;
 }
 
-function unSquash(squashedCommit, breakingHeading, context) {
+function unSquash(squashedCommit, breakingHeading, context, hasValidType) {
   const prID = extractPullRequestId(squashedCommit);
   const prName = extractPullRequestName(squashedCommit);
   const str = squashedCommit.body || squashedCommit.footer || squashedCommit.header
@@ -182,6 +179,30 @@ function unSquash(squashedCommit, breakingHeading, context) {
       commits.push(commit);
     }
   });
+
+  if (commits.length === 0 && hasValidType) {
+    let subject = squashedCommit.subject;
+
+    if (hasSquashedHash(subject)) {
+      subject = removeSquashedHash(subject)
+    }
+    let header = squashedCommit.header;
+    if (hasSquashedHash(header)) {
+      header = removeSquashedHash(header)
+    }
+    commits.push(
+      transformCommit({
+        ...squashedCommit,
+        subject,
+        header,
+        pr: {
+          id: prID,
+          name: prName,
+          url: generatePullRequestUrl(prID, context),
+        }
+      }, breakingHeading, context),
+    );
+  }
 
   return commits;
 }
